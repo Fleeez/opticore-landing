@@ -1,0 +1,207 @@
+@import "tailwindcss";
+
+@theme {
+  --color-bg-primary: #0B0C10;
+  --color-bg-card: #12141C;
+  --color-bg-hover: #1A1D2B;
+  --color-border-sutil: #1F2438;
+  --color-acento-primario: #00f2fe;
+  --color-acento-secundario: #05ffc3;
+  --color-acento-purple: #818cf8;
+  --color-text-primario: #F5F7FA;
+  --color-text-secundario: #8F9CAE;
+  --color-text-muted: #57657A;
+  --color-success: #05ffc3;
+  --color-error: #f43f5e;
+
+  --font-sans: var(--font-plus-jakarta-sans);
+  --font-display: var(--font-space-grotesk);
+}
+
+:root {
+  --background: #0B0C10;
+  --foreground: #F5F7FA;
+}
+
+html {
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+}
+
+body {
+  background-color: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-plus-jakarta-sans), sans-serif;
+  min-height: 100vh;
+  position: relative;
+  overflow-x: hidden;
+  overflow-y: visible;
+}
+
+/* Cyber grid mesh background overlay */
+.grid-overlay {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 40px 40px;
+  background-image: 
+    linear-gradient(to right, rgba(31, 36, 56, 0.25) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(31, 36, 56, 0.25) 1px, transparent 1px);
+  pointer-events: none;
+  z-index: 1;
+}
+
+/* Subtle scanlines overlay */
+.grid-overlay::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(rgba(18, 16, 16, 0) 50%, rgba(0, 0, 0, 0.15) 50%), linear-gradient(90deg, rgba(255, 0, 0, 0.03), rgba(0, 255, 0, 0.01), rgba(0, 0, 255, 0.03));
+  background-size: 100% 4px, 3px 100%;
+  pointer-events: none;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #0B0C10;
+}
+::-webkit-scrollbar-thumb {
+  background: #1F2438;
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #00f2fe;
+  box-shadow: 0 0 10px #00f2fe;
+}
+
+/* Hide default cursor on desktop */
+@media (pointer: fine) {
+  .custom-cursor-none,
+  .custom-cursor-none * {
+    cursor: none !important;
+  }
+}
+
+/* Floating animation keyframes */
+@keyframes float-glow-1 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1);
+    opacity: 0.15;
+  }
+  33% {
+    transform: translate(40px, -60px) scale(1.15);
+    opacity: 0.2;
+  }
+  66% {
+    transform: translate(-30px, 30px) scale(0.9);
+    opacity: 0.12;
+  }
+}
+
+@keyframes float-glow-2 {
+  0%, 100% {
+    transform: translate(0px, 0px) scale(1.05);
+    opacity: 0.1;
+  }
+  50% {
+    transform: translate(-60px, 40px) scale(0.95);
+    opacity: 0.15;
+  }
+}
+
+.animate-glow-1 {
+  animation: float-glow-1 18s infinite ease-in-out;
+}
+
+.animate-glow-2 {
+  animation: float-glow-2 22s infinite ease-in-out;
+}
+
+/* Scrolling Marquee */
+@keyframes marquee-scroll {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-marquee {
+  display: flex;
+  width: max-content;
+  animation: marquee-scroll 35s linear infinite;
+}
+
+.animate-marquee:hover {
+  animation-play-state: paused;
+}
+
+/* Card 3D effects */
+.perspective-container {
+  perspective: 1000px;
+}
+
+.card-3d {
+  transform-style: preserve-3d;
+  transition: transform 0.15s ease-out, border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card-3d-inner {
+  transform: translateZ(28px);
+  transform-style: preserve-3d;
+}
+
+/* Glassmorphism card templates */
+.glass-card {
+  background: rgba(18, 20, 28, 0.75);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+.glass-card-hover:hover {
+  background: rgba(26, 29, 43, 0.85);
+  border-color: #00f2fe;
+  box-shadow: 0 15px 35px -15px rgba(0, 242, 254, 0.2);
+}
+
+/* Text glow utilities */
+.text-glow-cyan {
+  text-shadow: 0 0 15px rgba(0, 242, 254, 0.6);
+}
+
+.text-glow-mint {
+  text-shadow: 0 0 15px rgba(5, 255, 195, 0.6);
+}
+
+.text-glow-gold {
+  text-shadow: 0 0 15px rgba(193, 154, 91, 0.65);
+}
+
+.text-glow-orange {
+  text-shadow: 0 0 15px rgba(212, 87, 78, 0.65);
+}
+
+/* Bouncing typing dot */
+@keyframes dot-bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-4px);
+  }
+}
+
+.typing-dot {
+  animation: dot-bounce 1.2s infinite ease-in-out;
+}
+
+/* Smooth snap scrolling reveals */
+html {
+  scroll-behavior: smooth;
+}
