@@ -568,14 +568,14 @@ export default function OptiCoreLanding() {
     }
 
     if (text.match(/(humano|asesor|contacto|hablar con alguien|atencion|soporte|telefono|dueño)/)) {
-      return "Sin problema. Ya le avisé al encargado de OptiCore por Telegram. Te va a estar escribiendo por WhatsApp en un minuto. Mientras tanto, consultame lo que quieras. 📱";
+      return "Sin problema. Ya le avisé al encargado de OptiCore por Telegram o WhatsApp. Te va a estar escribiendo en un minuto. Mientras tanto, consultame lo que quieras. 📱";
     }
 
     // Dynamic looping fallbacks for Sofía (PNL Hooks)
     if (currentFallbackCount === 0) {
       return "Esa es una buena consulta. En producción, me conecto con tu base de datos de propiedades (e.g. Tokko Broker) y envío al cliente las fichas en PDF según lo que solicitan. ¿Querés ver cómo se vería esto con los datos de tu propia inmobiliaria? Dejanos tu contacto en el formulario de abajo para armar tu demo personalizada. 🍷";
     } else if (currentFallbackCount === 1) {
-      return "Veo que querés evaluar mi capacidad operativa, ¡excelente! 😉 Además de chatear, realizo seguimiento automático a leads fríos, actualizo etiquetas en tu CRM (HubSpot, Salesforce) y te alerto por Telegram si hay un interesado de alto valor listo para firmar. Si querés ver el panel de control detrás de escena, podés agendar una videollamada de 5 minutos en el botón de abajo. Te va a fascinar.";
+      return "Veo que querés evaluar mi capacidad operativa, ¡excelente! 😉 Además de chatear, realizo seguimiento automático a leads fríos, actualizo etiquetas en tu CRM (HubSpot, Salesforce) y te alerto por Telegram o WhatsApp si hay un interesado de alto valor listo para firmar. Si querés ver el panel de control detrás de escena, podés agendar una videollamada de 5 minutos en el botón de abajo. Te va a fascinar.";
     } else {
       return "Ese es un punto clave de la integración. La IA real de OptiCore se calibra al tono, objeciones y cartera de tu agencia. Para resolver tus dudas técnicas específicas, te recomiendo agendar una sesión estratégica rápida con nuestro director haciendo click en el botón 'Agendar videollamada' al lado del formulario. ¿Te sumás? 🚀";
     }
@@ -640,7 +640,7 @@ export default function OptiCoreLanding() {
     }
 
     if (text.match(/(humano|mozo|encargado|asesor|contacto|hablar con alguien|atencion|soporte|telefono|dueño)/)) {
-      return "Sin problema. Ya le avisé al gerente del local por Telegram. Te va a estar escribiendo por WhatsApp en un minuto. Mientras tanto, consultame lo que quieras. 📱";
+      return "Sin problema. Ya le avisé al gerente del local por Telegram o WhatsApp. Te va a estar escribiendo en un minuto. Mientras tanto, consultame lo que quieras. 📱";
     }
 
     // Dynamic looping fallbacks for Bruno (PNL Hooks)
@@ -1877,7 +1877,7 @@ export default function OptiCoreLanding() {
               </div>
               <h3 className="font-display text-lg font-bold text-text-primario mb-3">Tus Software Integrados</h3>
               <p className="text-xs text-text-secundario leading-relaxed">
-                Conectamos al agente con tus herramientas diarias: HubSpot, Tokko Broker, sistemas de reservas (Woki), Google Sheets, pasarelas de pago, o alertas en tiempo real vía Telegram.
+                Conectamos al agente con tus herramientas diarias: HubSpot, Tokko Broker, sistemas de reservas (Woki), Google Sheets, pasarelas de pago, o alertas en tiempo real vía Telegram o WhatsApp.
               </p>
             </div>
           </TiltCard>
@@ -2293,7 +2293,7 @@ const testimonials = [
 const faqData = [
   {
     q: "¿Qué herramientas pueden conectar los agentes de IA?",
-    a: "Podemos conectar prácticamente cualquier herramienta moderna con API (HubSpot, Salesforce, WooCommerce, Shopify, Gmail, Google Sheets, Slack, Telegram, ERPs internos y bases de datos SQL/NoSQL). Si tu software tiene API, podemos automatizarlo.",
+    a: "Podemos conectar prácticamente cualquier herramienta moderna con API (HubSpot, Salesforce, WooCommerce, Shopify, Gmail, Google Sheets, Slack, Telegram, WhatsApp, ERPs internos y bases de datos SQL/NoSQL). Si tu software tiene API, podemos automatizarlo.",
   },
   {
     q: "¿Los clientes se dan cuenta de que están hablando con una Inteligencia Artificial?",
