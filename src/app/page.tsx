@@ -917,12 +917,12 @@ export default function OptiCoreLanding() {
             </div>
             
             <h1 className="font-display text-4xl sm:text-5xl lg:text-6xl font-bold text-text-primario leading-[1.08] tracking-[-0.015em] mb-6">
-              Multiplica tu facturación y productividad en 30 días con <br />
-              <span className="bg-gradient-to-r from-acento-primario to-acento-secundario bg-clip-text text-transparent font-display font-bold text-glow-cyan">agentes de I.A a medida.</span>
+              Liberá 15+ horas semanales de tu equipo eliminando <br />
+              <span className="bg-gradient-to-r from-acento-primario to-acento-secundario bg-clip-text text-transparent font-display font-bold text-glow-cyan">las tareas manuales y repetitivas.</span>
             </h1>
             
             <p className="text-lg md:text-xl text-text-secundario font-normal leading-relaxed mb-8 max-w-[620px]">
-              ¿Cansado de perder horas en sistemas lentos y obsoletos que no se conectan entre sí? Dejá atrás las tareas manuales y los programas viejos. Creamos agentes de IA a medida que automatizan tu operación, liberan 15+ horas semanales por empleado y multiplican tu rentabilidad.
+              Dejá de renegar con sistemas lentos e ineficientes que no se conectan entre sí. Diseñamos e implementamos sistemas de IA a medida que automatizan tu administración, atención al cliente y ventas en 30 días.
             </p>
 
             <div className="w-full sm:w-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8">
@@ -1039,71 +1039,74 @@ export default function OptiCoreLanding() {
         </div>
       </div>
 
-      {/* 2. QUÉ HACEMOS SECTION (3D Tilt Service Cards) */}
-      <section id="que-hacemos" className="w-full py-16 md:py-24 max-w-[1200px] mx-auto px-6 relative z-10">
-        <div className="text-center mb-16">
-          <span className="text-xs uppercase tracking-widest text-acento-primario font-bold mb-3 block">INFRAESTRUCTURA DE IA</span>
-          <h2 className="font-display text-3xl md:text-5xl font-bold text-text-primario tracking-tight mb-4">
-            La arquitectura que tu negocio necesita
-          </h2>
-          <p className="text-text-secundario text-base md:text-lg max-w-[620px] mx-auto leading-relaxed">
-            Reemplazamos sistemas antiguos e ineficientes por agentes autónomos de IA que eliminan las tareas repetitivas y hacen ganar tiempo a tu equipo.
-          </p>
-        </div>
+      {/* 3. PROBLEMA - SOLUCIÓN SECTION */}
+      <section id="problema-solucion" className="w-full bg-[#12141C]/30 border-y border-border-sutil py-16 md:py-24 relative z-10">
+        <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 align-center">
+          {/* Problem */}
+          <div className="flex flex-col justify-center text-left">
+            <span className="inline-flex items-center px-3 py-1 bg-error/10 border border-error rounded-full text-xs font-bold text-error uppercase tracking-wider mb-6 w-max">
+              El Estado Actual
+            </span>
+            <h2 className="font-display text-3xl md:text-5xl font-bold text-text-primario mb-4 leading-tight">
+              El Cuello de Botella Manual
+            </h2>
+            <p className="text-text-secundario text-base md:text-lg mb-8 leading-relaxed">
+              Hacer crecer tu facturación no debería significar quemar a tu equipo con tareas administrativas pesadas.
+            </p>
+            
+            <ul className="space-y-6 text-sm text-text-secundario">
+              <li className="flex items-start gap-3">
+                <span className="w-5 h-5 rounded-full bg-error/25 border border-error text-error flex items-center justify-center shrink-0 font-bold">✕</span>
+                <div>
+                  <strong className="text-text-primario">Sistemas Obsoletos:</strong> Software lento y viejo que no se conecta entre sí, obligando a tu equipo a copiar y pegar datos manualmente entre planillas y CRM.
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="w-5 h-5 rounded-full bg-error/25 border border-error text-error flex items-center justify-center shrink-0 font-bold">✕</span>
+                <div>
+                  <strong className="text-text-primario">Fuga de Tiempo:</strong> Tu personal pasa horas contestando los mismos mensajes repetitivos por WhatsApp, descuidando el cierre de nuevas ventas.
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="w-5 h-5 rounded-full bg-error/25 border border-error text-error flex items-center justify-center shrink-0 font-bold">✕</span>
+                <div>
+                  <strong className="text-text-primario">Crecimiento Estancado:</strong> Si para procesar más volumen necesitas contratar el doble de empleados administrativos, tu negocio se vuelve lento e insostenible.
+                </div>
+              </li>
+            </ul>
+          </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 perspective-container">
-          {/* Card 1 */}
-          <TiltCard>
-            <div>
-              <div className="w-14 h-14 bg-bg-hover border border-acento-primario/30 rounded-xl flex items-center justify-center mb-6 shadow-inner">
-                <Layers className="w-7 h-7 text-acento-primario" />
-              </div>
-              <h3 className="font-display text-2xl font-bold text-text-primario mb-4">
-                Automatización de Procesos Operativos
-              </h3>
-              <p className="text-sm text-text-secundario leading-relaxed mb-6">
-                Elimina el trabajo manual de tu CRM, facturación y procesamiento de pedidos. Conectamos tus herramientas para que la información fluya sin errores humanos.
-              </p>
-            </div>
-            <div className="border-t border-border-sutil pt-4 text-xs font-mono text-acento-primario">
-              INTEGRACIONES LLAVE EN MANO
-            </div>
-          </TiltCard>
-
-          {/* Card 2 */}
-          <TiltCard>
-            <div>
-              <div className="w-14 h-14 bg-bg-hover border border-acento-primario/30 rounded-xl flex items-center justify-center mb-6 shadow-inner">
-                <Bot className="w-7 h-7 text-acento-primario" />
-              </div>
-              <h3 className="font-display text-2xl font-bold text-text-primario mb-4">
-                Agentes de I.A de Ventas y Soporte
-              </h3>
-              <p className="text-sm text-text-secundario leading-relaxed mb-6">
-                Califica leads, programa reuniones de ventas y responde consultas operativas complejas de tus clientes de forma automática e inteligente las 24 horas del día.
-              </p>
-            </div>
-            <div className="border-t border-border-sutil pt-4 text-xs font-mono text-acento-primario">
-              ATENCIÓN AUTÓNOMA 24/7
-            </div>
-          </TiltCard>
-
-          {/* Card 3 */}
-          <TiltCard>
-            <div>
-              <div className="w-14 h-14 bg-bg-hover border border-acento-primario/30 rounded-xl flex items-center justify-center mb-6 shadow-inner">
-                <Database className="w-7 h-7 text-acento-primario" />
-              </div>
-              <h3 className="font-display text-2xl font-bold text-text-primario mb-4">
-                Bases de Conocimiento Inteligentes
-              </h3>
-              <p className="text-sm text-text-secundario leading-relaxed mb-6">
-                Centralizamos la documentación técnica, bases de conocimiento e historial de tu empresa en una base de datos neuronal estructurada a la que tus agentes acceden en milisegundos.
-              </p>
-            </div>
-            <div className="border-t border-border-sutil pt-4 text-xs font-mono text-acento-primario">
-              BBDD NEURONALES RAG
-            </div>
+          <TiltCard className="w-full">
+            <span className="inline-flex items-center px-3 py-1 bg-success/15 border border-success rounded-full text-xs font-bold text-success uppercase tracking-wider mb-6 w-max">
+              Con OptiCore AI
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-text-primario mb-4 leading-tight">
+              La Operación Autónoma
+            </h2>
+            <p className="text-text-secundario text-base mb-8 leading-relaxed">
+              Delegas la complejidad técnica y el trabajo administrativo en sistemas autónomos estables.
+            </p>
+            
+            <ul className="space-y-6 text-sm text-text-secundario">
+              <li className="flex items-start gap-3">
+                <span className="w-5 h-5 rounded-full bg-success/20 border border-success text-success flex items-center justify-center shrink-0 font-bold">✓</span>
+                <div>
+                  <strong className="text-text-primario">Adiós a la Burocracia:</strong> Los remitos, facturas y reportes se procesan, leen y archivan al instante en tu base de datos, sin errores ni demoras.
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="w-5 h-5 rounded-full bg-success/20 border border-success text-success flex items-center justify-center shrink-0 font-bold">✓</span>
+                <div>
+                  <strong className="text-text-primario">Respuestas en Segundos:</strong> Agentes de IA atienden, filtran y califican a cada prospecto en WhatsApp las 24/7. Tu equipo solo interviene cuando el cliente está listo para comprar.
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="w-5 h-5 rounded-full bg-success/20 border border-success text-success flex items-center justify-center shrink-0 font-bold">✓</span>
+                <div>
+                  <strong className="text-text-primario">Escalabilidad Real:</strong> Multiplicas tu volumen de operaciones y clientes manteniendo tu estructura actual ágil, rápida y eficiente.
+                </div>
+              </li>
+            </ul>
           </TiltCard>
         </div>
       </section>
@@ -1301,74 +1304,71 @@ export default function OptiCoreLanding() {
       </div>
       </section>
 
-      {/* 3. PROBLEMA - SOLUCIÓN SECTION */}
-      <section id="problema-solucion" className="w-full bg-[#12141C]/30 border-y border-border-sutil py-16 md:py-24 relative z-10">
-        <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 align-center">
-          {/* Problem */}
-          <div className="flex flex-col justify-center text-left">
-            <span className="inline-flex items-center px-3 py-1 bg-error/10 border border-error rounded-full text-xs font-bold text-error uppercase tracking-wider mb-6 w-max">
-              El Estado Actual
-            </span>
-            <h2 className="font-display text-3xl md:text-5xl font-bold text-text-primario mb-4 leading-tight">
-              El Cuello de Botella Manual
-            </h2>
-            <p className="text-text-secundario text-base md:text-lg mb-8 leading-relaxed">
-              Hacer crecer tu facturación no debería significar quemar a tu equipo con tareas administrativas pesadas.
-            </p>
-            
-            <ul className="space-y-6 text-sm text-text-secundario">
-              <li className="flex items-start gap-3">
-                <span className="w-5 h-5 rounded-full bg-error/25 border border-error text-error flex items-center justify-center shrink-0 font-bold">✕</span>
-                <div>
-                  <strong className="text-text-primario">Sistemas Obsoletos:</strong> Software lento y viejo que no se conecta entre sí, obligando a tu equipo a copiar y pegar datos manualmente entre planillas y CRM.
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-5 h-5 rounded-full bg-error/25 border border-error text-error flex items-center justify-center shrink-0 font-bold">✕</span>
-                <div>
-                  <strong className="text-text-primario">Fuga de Tiempo:</strong> Tu personal pasa horas contestando los mismos mensajes repetitivos por WhatsApp, descuidando el cierre de nuevas ventas.
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-5 h-5 rounded-full bg-error/25 border border-error text-error flex items-center justify-center shrink-0 font-bold">✕</span>
-                <div>
-                  <strong className="text-text-primario">Crecimiento Estancado:</strong> Si para procesar más volumen necesitas contratar el doble de empleados administrativos, tu negocio se vuelve lento e insostenible.
-                </div>
-              </li>
-            </ul>
-          </div>
+      {/* 2. QUÉ HACEMOS SECTION (3D Tilt Service Cards) */}
+      <section id="que-hacemos" className="w-full py-16 md:py-24 max-w-[1200px] mx-auto px-6 relative z-10">
+        <div className="text-center mb-16">
+          <span className="text-xs uppercase tracking-widest text-acento-primario font-bold mb-3 block">INFRAESTRUCTURA DE IA</span>
+          <h2 className="font-display text-3xl md:text-5xl font-bold text-text-primario tracking-tight mb-4">
+            La arquitectura que tu negocio necesita
+          </h2>
+          <p className="text-text-secundario text-base md:text-lg max-w-[620px] mx-auto leading-relaxed">
+            Reemplazamos sistemas antiguos e ineficientes por agentes autónomos de IA que eliminan las tareas repetitivas y hacen ganar tiempo a tu equipo.
+          </p>
+        </div>
 
-          <TiltCard className="w-full">
-            <span className="inline-flex items-center px-3 py-1 bg-success/15 border border-success rounded-full text-xs font-bold text-success uppercase tracking-wider mb-6 w-max">
-              Con OptiCore AI
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-text-primario mb-4 leading-tight">
-              La Operación Autónoma
-            </h2>
-            <p className="text-text-secundario text-base mb-8 leading-relaxed">
-              Delegas la complejidad técnica y el trabajo administrativo en sistemas autónomos estables.
-            </p>
-            
-            <ul className="space-y-6 text-sm text-text-secundario">
-              <li className="flex items-start gap-3">
-                <span className="w-5 h-5 rounded-full bg-success/20 border border-success text-success flex items-center justify-center shrink-0 font-bold">✓</span>
-                <div>
-                  <strong className="text-text-primario">Adiós a la Burocracia:</strong> Los remitos, facturas y reportes se procesan, leen y archivan al instante en tu base de datos, sin errores ni demoras.
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-5 h-5 rounded-full bg-success/20 border border-success text-success flex items-center justify-center shrink-0 font-bold">✓</span>
-                <div>
-                  <strong className="text-text-primario">Respuestas en Segundos:</strong> Agentes de IA atienden, filtran y califican a cada prospecto en WhatsApp las 24/7. Tu equipo solo interviene cuando el cliente está listo para comprar.
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-5 h-5 rounded-full bg-success/20 border border-success text-success flex items-center justify-center shrink-0 font-bold">✓</span>
-                <div>
-                  <strong className="text-text-primario">Escalabilidad Real:</strong> Multiplicas tu volumen de operaciones y clientes manteniendo tu estructura actual ágil, rápida y eficiente.
-                </div>
-              </li>
-            </ul>
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 perspective-container">
+          {/* Card 1 */}
+          <TiltCard>
+            <div>
+              <div className="w-14 h-14 bg-bg-hover border border-acento-primario/30 rounded-xl flex items-center justify-center mb-6 shadow-inner">
+                <Layers className="w-7 h-7 text-acento-primario" />
+              </div>
+              <h3 className="font-display text-2xl font-bold text-text-primario mb-4">
+                Carga y Procesamiento de Datos sin Errores
+              </h3>
+              <p className="text-sm text-text-secundario leading-relaxed mb-6">
+                Olvidate de copiar y pegar datos a mano. Automatizamos la lectura de facturas, remitos, PDFs y la carga de información directa en tu CRM o ERP de inmediato y con total precisión.
+              </p>
+            </div>
+            <div className="border-t border-border-sutil pt-4 text-xs font-mono text-acento-primario">
+              OPERACIÓN AUTOMÁTICA Y SIN ERRORES
+            </div>
+          </TiltCard>
+
+          {/* Card 2 */}
+          <TiltCard>
+            <div>
+              <div className="w-14 h-14 bg-bg-hover border border-acento-primario/30 rounded-xl flex items-center justify-center mb-6 shadow-inner">
+                <Bot className="w-7 h-7 text-acento-primario" />
+              </div>
+              <h3 className="font-display text-2xl font-bold text-text-primario mb-4">
+                Atención y Ventas Automáticas 24/7
+              </h3>
+              <p className="text-sm text-text-secundario leading-relaxed mb-6">
+                Filtramos y calificamos a cada interesado en WhatsApp al instante. Tu equipo comercial solo interviene cuando el cliente está precalificado y listo para comprar.
+              </p>
+            </div>
+            <div className="border-t border-border-sutil pt-4 text-xs font-mono text-acento-primario">
+              RESPUESTAS EN SEGUNDOS 24/7
+            </div>
+          </TiltCard>
+
+          {/* Card 3 */}
+          <TiltCard>
+            <div>
+              <div className="w-14 h-14 bg-bg-hover border border-acento-primario/30 rounded-xl flex items-center justify-center mb-6 shadow-inner">
+                <Database className="w-7 h-7 text-acento-primario" />
+              </div>
+              <h3 className="font-display text-2xl font-bold text-text-primario mb-4">
+                Respuestas Inmediatas con Información Real
+              </h3>
+              <p className="text-sm text-text-secundario leading-relaxed mb-6">
+                Tus agentes de IA acceden en milisegundos a todo el catálogo, documentación técnica, políticas o stock de tu negocio para responder consultas complejas idéntico a tu mejor empleado.
+              </p>
+            </div>
+            <div className="border-t border-border-sutil pt-4 text-xs font-mono text-acento-primario">
+              CEREBRO DE DATOS PROPIO
+            </div>
           </TiltCard>
         </div>
       </section>
@@ -2097,6 +2097,68 @@ export default function OptiCoreLanding() {
             ))}
           </div>
         </div>
+      </section>
+
+      {/* 6.5 DETRÁS DE OPTICORE (EL FUNDADOR) */}
+      <section id="fundador" className="w-full py-16 md:py-24 max-w-[900px] mx-auto px-6 relative z-10">
+        <TiltCard className="w-full relative overflow-hidden">
+          {/* Decorative glow lights */}
+          <div className="absolute top-[-20%] right-[-10%] w-[250px] h-[250px] rounded-full bg-acento-primario/10 blur-[80px] pointer-events-none z-0"></div>
+          <div className="absolute bottom-[-20%] left-[-10%] w-[250px] h-[250px] rounded-full bg-acento-purple/8 blur-[80px] pointer-events-none z-0"></div>
+
+          <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center text-left">
+            {/* Avatar Column */}
+            <div className="md:col-span-4 flex flex-col items-center justify-center text-center">
+              <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full border-2 border-acento-primario p-1 shadow-[0_0_25px_rgba(0,242,254,0.2)] bg-bg-card flex items-center justify-center mb-4">
+                {/* AI / Avatar Icon */}
+                <div className="w-full h-full rounded-full bg-[#12141C] flex items-center justify-center font-display text-4xl font-bold text-acento-primario">
+                  F
+                </div>
+              </div>
+              <h3 className="font-display text-lg font-bold text-text-primario">Fabrizzio Joel C.</h3>
+              <p className="text-xs text-acento-primario font-mono uppercase tracking-wider mt-1">Founder de OptiCore</p>
+            </div>
+
+            {/* Content Column */}
+            <div className="md:col-span-8 flex flex-col items-start justify-center">
+              <span className="text-[10px] uppercase tracking-widest text-text-muted font-bold mb-3 block">CONOCÉ AL FUNDADOR</span>
+              <h2 className="font-display text-2xl md:text-3xl font-bold text-text-primario mb-4 leading-tight">
+                Una relación humana en un mundo automatizado
+              </h2>
+              <p className="text-sm text-text-secundario leading-relaxed mb-6">
+                ¡Hola! Soy Fabrizzio Joel, creador de OptiCore. Diseñé esta agencia con una obsesión clara: ayudar a los dueños de negocios a recuperar su tiempo libre y erradicar los sistemas lentos o procesos manuales obsoletos que queman a su equipo.
+              </p>
+              <p className="text-sm text-text-secundario leading-relaxed mb-6">
+                Sé que delegar la operación en Inteligencia Artificial puede generar dudas. Por eso, no te vendemos tecnología complicada que no entendés; te acompañamos en persona a implementar sistemas estables que generen rentabilidad real.
+              </p>
+              
+              <div className="flex flex-wrap gap-4 w-full">
+                <a
+                  href="https://instagram.com/fabrizzio.joel"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-3 bg-[#12141C] hover:bg-[#1C1F2E] border border-[#E1306C]/40 hover:border-[#E1306C] text-text-primario text-xs font-bold rounded-lg transition-all duration-200 flex items-center gap-2"
+                >
+                  <svg className="w-4 h-4 text-[#E1306C]" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                    <path d="M16 11.37A4 4 0 1 1 12.63 8 4 4 0 0 1 16 11.37z" />
+                    <line x1="17.5" y1="6.5" x2="17.51" y2="6.5" />
+                  </svg>
+                  Seguime en Instagram
+                </a>
+                <a
+                  href="https://calendly.com/fabrizzio-joel-c/opticore-call"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="px-5 py-3 bg-acento-primario hover:bg-acento-primario/90 text-bg-primary text-xs font-bold rounded-lg shadow-md transition-all duration-200 flex items-center gap-2"
+                >
+                  Agendar llamada directa
+                  <ArrowRight className="w-4 h-4" />
+                </a>
+              </div>
+            </div>
+          </div>
+        </TiltCard>
       </section>
 
       {/* 7. FAQ SECTION */}
