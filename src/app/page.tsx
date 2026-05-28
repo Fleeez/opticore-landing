@@ -1070,7 +1070,7 @@ export default function OptiCoreLanding() {
               <li className="flex items-start gap-3">
                 <span className="w-5 h-5 rounded-full bg-error/25 border border-error text-error flex items-center justify-center shrink-0 font-bold">✕</span>
                 <div>
-                  <strong className="text-text-primario">Crecimiento Estancado:</strong> Si para procesar más volumen necesitas contratar el doble de empleados administrativos, tu negocio se vuelve lento e insostenible.
+                  <strong className="text-text-primario">Crecimiento Estancado:</strong> Si para procesar más volumen necesitas contratar el doble de empleados administrativos, tu empresa se vuelve lenta e insostenible.
                 </div>
               </li>
             </ul>
@@ -1133,7 +1133,7 @@ export default function OptiCoreLanding() {
         <div className="text-center mb-20">
           <span className="text-xs uppercase tracking-widest text-acento-primario font-bold mb-3 block">SOLUCIONES ADAPTADAS</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-text-primario tracking-tight mb-4">
-            Elegí el sector de tu negocio
+            Elegí el sector de tu empresa
           </h2>
           <p className="text-text-secundario text-base md:text-lg max-w-[580px] mx-auto leading-relaxed">
             Cuatro rubros, agentes especializados. Cada agente queda entrenado para las tareas que de verdad mueven la aguja en tu sector.
@@ -1309,7 +1309,7 @@ export default function OptiCoreLanding() {
         <div className="text-center mb-16">
           <span className="text-xs uppercase tracking-widest text-acento-primario font-bold mb-3 block">INFRAESTRUCTURA DE IA</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-text-primario tracking-tight mb-4">
-            La arquitectura que tu negocio necesita
+            La arquitectura que tu empresa necesita
           </h2>
           <p className="text-text-secundario text-base md:text-lg max-w-[620px] mx-auto leading-relaxed">
             Reemplazamos sistemas antiguos e ineficientes por agentes autónomos de IA que eliminan las tareas repetitivas y hacen ganar tiempo a tu equipo.
@@ -1363,7 +1363,7 @@ export default function OptiCoreLanding() {
                 Respuestas Inmediatas con Información Real
               </h3>
               <p className="text-sm text-text-secundario leading-relaxed mb-6">
-                Tus agentes de IA acceden en milisegundos a todo el catálogo, documentación técnica, políticas o stock de tu negocio para responder consultas complejas idéntico a tu mejor empleado.
+                Tus agentes de IA acceden en milisegundos a todo el catálogo, documentación técnica, políticas o stock de tu empresa para responder consultas complejas idéntico a tu mejor empleado.
               </p>
             </div>
             <div className="border-t border-border-sutil pt-4 text-xs font-mono text-acento-primario">
@@ -1379,7 +1379,7 @@ export default function OptiCoreLanding() {
           <div className="text-center mb-16">
             <span className="text-xs uppercase tracking-widest text-acento-primario font-bold mb-3 block">MÉTODO DE TRABAJO</span>
             <h2 className="font-display text-3xl md:text-5xl font-bold text-text-primario tracking-tight mb-4">
-              Dos formas de transformar tu negocio
+              Dos formas de transformar tu empresa
             </h2>
             <p className="text-text-secundario text-base md:text-lg max-w-[600px] mx-auto leading-relaxed">
               Elige si prefieres que desarrollemos tu arquitectura llave en mano o que te formemos para dominar la Inteligencia Artificial.
@@ -1404,7 +1404,7 @@ export default function OptiCoreLanding() {
                   <div className="border-t border-border-sutil py-6">
                     <span className="text-xs font-bold uppercase tracking-wider text-acento-primario block mb-2">Para quién es:</span>
                     <p className="text-xs text-text-secundario leading-relaxed">
-                      Dueños de negocios que buscan delegar la parte técnica al 100%. Querés un sistema activo, estable y facturando sin tener que escribir una sola línea de código o aprender a usar herramientas complejas. Vos aprobás la estrategia, nosotros entregamos.
+                      Dueños de empresas que buscan delegar la parte técnica al 100%. Querés un sistema activo, estable y facturando sin tener que escribir una sola línea de código o aprender a usar herramientas complejas. Vos aprobás la estrategia, nosotros entregamos.
                     </p>
                   </div>
 
@@ -1538,7 +1538,7 @@ export default function OptiCoreLanding() {
             <div className="w-16 h-16 bg-bg-card border-2 border-acento-primario rounded-full flex items-center justify-center font-display text-2xl font-bold text-acento-primario shadow mb-6">
               1
             </div>
-            <h3 className="font-display text-lg font-bold text-text-primario mb-3">Conocemos tu negocio</h3>
+            <h3 className="font-display text-lg font-bold text-text-primario mb-3">Conocemos tu empresa</h3>
             <p className="text-xs text-text-secundario leading-relaxed max-w-[240px]">
               Hacemos un diagnóstico preciso para identificar cómo trabajás hoy: qué tareas repetitivas te consumen el día y dónde se escapan leads.
             </p>
@@ -1968,7 +1968,7 @@ export default function OptiCoreLanding() {
             Armá tu agente a medida
           </h2>
           <p className="text-text-secundario text-base md:text-lg max-w-[620px] mx-auto leading-relaxed">
-            No creemos en plantillas rígidas. Tu negocio es único: tiene sus propios problemas, su tono de voz y sus propias herramientas. Diseñamos una solución que encaja al 100%.
+            No creemos en plantillas rígidas. Tu empresa es única: tiene sus propios problemas, su tono de voz y sus propias herramientas. Diseñamos una solución que encaja al 100%.
           </p>
         </div>
 
@@ -2005,7 +2005,7 @@ export default function OptiCoreLanding() {
               <div className="w-12 h-12 bg-bg-hover border border-acento-primario/30 rounded-xl flex items-center justify-center mb-6 shadow-inner">
                 <ShieldCheck className="w-6 h-6 text-acento-primario" />
               </div>
-              <h3 className="font-display text-lg font-bold text-text-primario mb-3">Tus Reglas de Negocio</h3>
+              <h3 className="font-display text-lg font-bold text-text-primario mb-3">Tus Reglas Operativas</h3>
               <p className="text-xs text-text-secundario leading-relaxed">
                 Definimos los filtros de calificación exactos: el agente solo derivará el lead si cumple tus criterios de presupuesto, zona, comensales u horario, ahorrándole tiempo a tu equipo.
               </p>
@@ -2126,7 +2126,7 @@ export default function OptiCoreLanding() {
                 Una relación humana en un mundo automatizado
               </h2>
               <p className="text-sm text-text-secundario leading-relaxed mb-6">
-                ¡Hola! Soy Fabrizzio Joel, creador de OptiCore. Diseñé esta agencia con una obsesión clara: ayudar a los dueños de negocios a recuperar su tiempo libre y erradicar los sistemas lentos o procesos manuales obsoletos que queman a su equipo.
+                ¡Hola! Soy Fabrizzio Joel, creador de OptiCore. Diseñé esta agencia con una obsesión clara: ayudar a los dueños de empresas a recuperar su tiempo libre y erradicar los sistemas lentos o procesos manuales obsoletos que queman a su equipo.
               </p>
               <p className="text-sm text-text-secundario leading-relaxed mb-6">
                 Sé que delegar la operación en Inteligencia Artificial puede generar dudas. Por eso, no te vendemos tecnología complicada que no entendés; te acompañamos en persona a implementar sistemas estables que generen rentabilidad real.
@@ -2222,7 +2222,7 @@ export default function OptiCoreLanding() {
         <div className="max-w-[1200px] mx-auto px-6 relative z-10 text-center">
           <span className="text-xs uppercase tracking-widest text-acento-primario font-bold mb-3 block">CONSULTORÍA INICIAL</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-text-primario tracking-tight mb-4">
-            Empezá a automatizar tu negocio hoy
+            Empezá a automatizar tu empresa hoy
           </h2>
           <p className="text-text-secundario text-base md:text-lg max-w-[600px] mx-auto mb-12 leading-relaxed">
             Completá el formulario en 30 segundos y te mostramos cómo liberar horas semanales con IA a medida.
@@ -2339,7 +2339,7 @@ export default function OptiCoreLanding() {
                       onChange={handleInputChange}
                       rows={4}
                       className="w-full bg-[#0B0C10] border border-border-sutil rounded px-4 py-3 text-sm text-text-primario focus:outline-none focus:border-acento-primario transition-colors resize-none"
-                      placeholder="Contanos a qué se dedica tu negocio y qué tareas querés automatizar"
+                      placeholder="Contanos a qué se dedica tu empresa y qué tareas querés automatizar"
                     />
                   </div>
 
