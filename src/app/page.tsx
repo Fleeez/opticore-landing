@@ -2109,11 +2109,12 @@ export default function OptiCoreLanding() {
           <div className="relative z-10 grid grid-cols-1 md:grid-cols-12 gap-8 items-center text-left">
             {/* Avatar Column */}
             <div className="md:col-span-4 flex flex-col items-center justify-center text-center">
-              <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full border-2 border-acento-primario p-1 shadow-[0_0_25px_rgba(0,242,254,0.2)] bg-bg-card flex items-center justify-center mb-4">
-                {/* AI / Avatar Icon */}
-                <div className="w-full h-full rounded-full bg-[#12141C] flex items-center justify-center font-display text-4xl font-bold text-acento-primario">
-                  F
-                </div>
+              <div className="relative w-28 h-28 md:w-32 md:h-32 rounded-full border-2 border-acento-primario p-1 shadow-[0_0_25px_rgba(0,242,254,0.2)] bg-bg-card flex items-center justify-center mb-4 overflow-hidden">
+                <img 
+                  src="/fabrizzio.jpg" 
+                  alt="Fabrizzio Joel C." 
+                  className="w-full h-full rounded-full object-cover" 
+                />
               </div>
               <h3 className="font-display text-lg font-bold text-text-primario">Fabrizzio Joel C.</h3>
               <p className="text-xs text-acento-primario font-mono uppercase tracking-wider mt-1">Founder de OptiCore</p>
@@ -2134,7 +2135,7 @@ export default function OptiCoreLanding() {
               
               <div className="flex flex-wrap gap-4 w-full">
                 <a
-                  href="https://instagram.com/fabrizzio.joel"
+                  href="https://instagram.com/fabrizziojoel.ai"
                   target="_blank"
                   rel="noopener noreferrer"
                   className="px-5 py-3 bg-[#12141C] hover:bg-[#1C1F2E] border border-[#E1306C]/40 hover:border-[#E1306C] text-text-primario text-xs font-bold rounded-lg transition-all duration-200 flex items-center gap-2"
