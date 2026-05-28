@@ -1108,78 +1108,6 @@ export default function OptiCoreLanding() {
         </div>
       </section>
 
-      {/* 3. PROBLEMA - SOLUCIÓN SECTION */}
-      <section id="problema-solucion" className="w-full bg-[#12141C]/30 border-y border-border-sutil py-16 md:py-24 relative z-10">
-        <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 align-center">
-          {/* Problem */}
-          <div className="flex flex-col justify-center text-left">
-            <span className="inline-flex items-center px-3 py-1 bg-error/10 border border-error rounded-full text-xs font-bold text-error uppercase tracking-wider mb-6 w-max">
-              El Estado Actual
-            </span>
-            <h2 className="font-display text-3xl md:text-5xl font-bold text-text-primario mb-4 leading-tight">
-              El Cuello de Botella Manual
-            </h2>
-            <p className="text-text-secundario text-base md:text-lg mb-8 leading-relaxed">
-              Hacer crecer tu facturación no debería significar quemar a tu equipo con tareas administrativas pesadas.
-            </p>
-            
-            <ul className="space-y-6 text-sm text-text-secundario">
-              <li className="flex items-start gap-3">
-                <span className="w-5 h-5 rounded-full bg-error/25 border border-error text-error flex items-center justify-center shrink-0 font-bold">✕</span>
-                <div>
-                  <strong className="text-text-primario">Sistemas Obsoletos:</strong> Software lento y viejo que no se conecta entre sí, obligando a tu equipo a copiar y pegar datos manualmente entre planillas y CRM.
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-5 h-5 rounded-full bg-error/25 border border-error text-error flex items-center justify-center shrink-0 font-bold">✕</span>
-                <div>
-                  <strong className="text-text-primario">Fuga de Tiempo:</strong> Tu personal pasa horas contestando los mismos mensajes repetitivos por WhatsApp, descuidando el cierre de nuevas ventas.
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-5 h-5 rounded-full bg-error/25 border border-error text-error flex items-center justify-center shrink-0 font-bold">✕</span>
-                <div>
-                  <strong className="text-text-primario">Crecimiento Estancado:</strong> Si para procesar más volumen necesitas contratar el doble de empleados administrativos, tu negocio se vuelve lento e insostenible.
-                </div>
-              </li>
-            </ul>
-          </div>
-
-          <TiltCard className="w-full">
-            <span className="inline-flex items-center px-3 py-1 bg-success/15 border border-success rounded-full text-xs font-bold text-success uppercase tracking-wider mb-6 w-max">
-              Con OptiCore AI
-            </span>
-            <h2 className="font-display text-3xl md:text-4xl font-bold text-text-primario mb-4 leading-tight">
-              La Operación Autónoma
-            </h2>
-            <p className="text-text-secundario text-base mb-8 leading-relaxed">
-              Delegas la complejidad técnica y el trabajo administrativo en sistemas autónomos estables.
-            </p>
-            
-            <ul className="space-y-6 text-sm text-text-secundario">
-              <li className="flex items-start gap-3">
-                <span className="w-5 h-5 rounded-full bg-success/20 border border-success text-success flex items-center justify-center shrink-0 font-bold">✓</span>
-                <div>
-                  <strong className="text-text-primario">Adiós a la Burocracia:</strong> Los remitos, facturas y reportes se procesan, leen y archivan al instante en tu base de datos, sin errores ni demoras.
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-5 h-5 rounded-full bg-success/20 border border-success text-success flex items-center justify-center shrink-0 font-bold">✓</span>
-                <div>
-                  <strong className="text-text-primario">Respuestas en Segundos:</strong> Agentes de IA atienden, filtran y califican a cada prospecto en WhatsApp las 24/7. Tu equipo solo interviene cuando el cliente está listo para comprar.
-                </div>
-              </li>
-              <li className="flex items-start gap-3">
-                <span className="w-5 h-5 rounded-full bg-success/20 border border-success text-success flex items-center justify-center shrink-0 font-bold">✓</span>
-                <div>
-                  <strong className="text-text-primario">Escalabilidad Real:</strong> Multiplicas tu volumen de operaciones y clientes manteniendo tu estructura actual ágil, rápida y eficiente.
-                </div>
-              </li>
-            </ul>
-          </TiltCard>
-        </div>
-      </section>
-
       {/* 3.5 CASOS DE USO POR SECTOR (3D Tilt Cards) */}
       <section id="sectores" className="w-full py-16 md:py-24 relative overflow-hidden z-10">
         {/* Background Video with Dark Filter */}
@@ -1371,6 +1299,78 @@ export default function OptiCoreLanding() {
           </TiltCard>
         </div>
       </div>
+      </section>
+
+      {/* 3. PROBLEMA - SOLUCIÓN SECTION */}
+      <section id="problema-solucion" className="w-full bg-[#12141C]/30 border-y border-border-sutil py-16 md:py-24 relative z-10">
+        <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-2 gap-16 align-center">
+          {/* Problem */}
+          <div className="flex flex-col justify-center text-left">
+            <span className="inline-flex items-center px-3 py-1 bg-error/10 border border-error rounded-full text-xs font-bold text-error uppercase tracking-wider mb-6 w-max">
+              El Estado Actual
+            </span>
+            <h2 className="font-display text-3xl md:text-5xl font-bold text-text-primario mb-4 leading-tight">
+              El Cuello de Botella Manual
+            </h2>
+            <p className="text-text-secundario text-base md:text-lg mb-8 leading-relaxed">
+              Hacer crecer tu facturación no debería significar quemar a tu equipo con tareas administrativas pesadas.
+            </p>
+            
+            <ul className="space-y-6 text-sm text-text-secundario">
+              <li className="flex items-start gap-3">
+                <span className="w-5 h-5 rounded-full bg-error/25 border border-error text-error flex items-center justify-center shrink-0 font-bold">✕</span>
+                <div>
+                  <strong className="text-text-primario">Sistemas Obsoletos:</strong> Software lento y viejo que no se conecta entre sí, obligando a tu equipo a copiar y pegar datos manualmente entre planillas y CRM.
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="w-5 h-5 rounded-full bg-error/25 border border-error text-error flex items-center justify-center shrink-0 font-bold">✕</span>
+                <div>
+                  <strong className="text-text-primario">Fuga de Tiempo:</strong> Tu personal pasa horas contestando los mismos mensajes repetitivos por WhatsApp, descuidando el cierre de nuevas ventas.
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="w-5 h-5 rounded-full bg-error/25 border border-error text-error flex items-center justify-center shrink-0 font-bold">✕</span>
+                <div>
+                  <strong className="text-text-primario">Crecimiento Estancado:</strong> Si para procesar más volumen necesitas contratar el doble de empleados administrativos, tu negocio se vuelve lento e insostenible.
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <TiltCard className="w-full">
+            <span className="inline-flex items-center px-3 py-1 bg-success/15 border border-success rounded-full text-xs font-bold text-success uppercase tracking-wider mb-6 w-max">
+              Con OptiCore AI
+            </span>
+            <h2 className="font-display text-3xl md:text-4xl font-bold text-text-primario mb-4 leading-tight">
+              La Operación Autónoma
+            </h2>
+            <p className="text-text-secundario text-base mb-8 leading-relaxed">
+              Delegas la complejidad técnica y el trabajo administrativo en sistemas autónomos estables.
+            </p>
+            
+            <ul className="space-y-6 text-sm text-text-secundario">
+              <li className="flex items-start gap-3">
+                <span className="w-5 h-5 rounded-full bg-success/20 border border-success text-success flex items-center justify-center shrink-0 font-bold">✓</span>
+                <div>
+                  <strong className="text-text-primario">Adiós a la Burocracia:</strong> Los remitos, facturas y reportes se procesan, leen y archivan al instante en tu base de datos, sin errores ni demoras.
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="w-5 h-5 rounded-full bg-success/20 border border-success text-success flex items-center justify-center shrink-0 font-bold">✓</span>
+                <div>
+                  <strong className="text-text-primario">Respuestas en Segundos:</strong> Agentes de IA atienden, filtran y califican a cada prospecto en WhatsApp las 24/7. Tu equipo solo interviene cuando el cliente está listo para comprar.
+                </div>
+              </li>
+              <li className="flex items-start gap-3">
+                <span className="w-5 h-5 rounded-full bg-success/20 border border-success text-success flex items-center justify-center shrink-0 font-bold">✓</span>
+                <div>
+                  <strong className="text-text-primario">Escalabilidad Real:</strong> Multiplicas tu volumen de operaciones y clientes manteniendo tu estructura actual ágil, rápida y eficiente.
+                </div>
+              </li>
+            </ul>
+          </TiltCard>
+        </div>
       </section>
 
       {/* 4. IMPLEMENTACIÓN VS MENTORÍA CARDS */}
@@ -1580,8 +1580,22 @@ export default function OptiCoreLanding() {
       </section>
 
       {/* SOFÍA LIVE CHAT DEMO SECTION */}
-      <section id="demo-realestate" className="w-full bg-[#12141C]/40 border-y border-border-sutil py-16 md:py-24 relative z-10">
-        <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+      <section id="demo-realestate" className="w-full bg-[#12141C]/40 border-y border-border-sutil py-16 md:py-24 relative overflow-hidden z-10">
+        {/* Background Video with Dark Filter */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="w-full h-full object-cover opacity-20"
+          >
+            <source src="/8471103-hd_1920_1080_25fps.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-[#0B0C10]/60"></div>
+        </div>
+
+        <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           
           {/* Left: Pain & PNL Copy */}
           <div className="lg:col-span-7 text-left">
@@ -1748,10 +1762,24 @@ export default function OptiCoreLanding() {
 
       {/* BRUNO LIVE CHAT DEMO SECTION */}
       <section id="demo-bruno" className="w-full bg-[#150D0A]/40 border-y border-border-sutil py-16 md:py-24 relative overflow-hidden z-10">
+        {/* Background Video with Dark Filter */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="w-full h-full object-cover opacity-20"
+          >
+            <source src="/5657100-hd_2048_1080_30fps.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-[#0B0C10]/60"></div>
+        </div>
+
         <div className="absolute top-[25%] left-[5%] w-[400px] h-[400px] rounded-full bg-acento-primario/5 blur-[120px] pointer-events-none z-0"></div>
         <div className="absolute bottom-[20%] right-[5%] w-[350px] h-[350px] rounded-full bg-acento-secundario/5 blur-[110px] pointer-events-none z-0"></div>
 
-        <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <div className="max-w-[1200px] mx-auto px-6 grid grid-cols-1 lg:grid-cols-12 gap-12 items-center relative z-10">
           
           {/* Left: Live Chat Mockup (in TiltWrapper) */}
           <div className="lg:col-span-5 flex justify-center order-2 lg:order-1">
