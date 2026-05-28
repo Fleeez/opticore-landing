@@ -443,6 +443,15 @@ export default function OptiCoreLanding() {
   // FAQ Accordion
   const [openFaq, setOpenFaq] = useState<number | null>(null);
 
+  // Ref for sectors video to play in slow motion
+  const sectoresVideoRef = useRef<HTMLVideoElement>(null);
+
+  useEffect(() => {
+    if (sectoresVideoRef.current) {
+      sectoresVideoRef.current.playbackRate = 0.5; // 0.5x slow motion
+    }
+  }, []);
+
   // Form states
   const [formValues, setFormValues] = useState<FormValues>({
     userName: "",
@@ -1176,6 +1185,7 @@ export default function OptiCoreLanding() {
         {/* Background Video with Dark Filter */}
         <div className="absolute inset-0 z-0 pointer-events-none">
           <video 
+            ref={sectoresVideoRef}
             autoPlay 
             loop 
             muted 
@@ -1918,7 +1928,7 @@ export default function OptiCoreLanding() {
             playsInline 
             className="w-full h-full object-cover opacity-15"
           >
-            <source src="/18743334-hd_1920_1080_60fps.mp4" type="video/mp4" />
+            <source src="/7691548-hd_1920_1080_25fps.mp4" type="video/mp4" />
           </video>
           <div className="absolute inset-0 bg-gradient-to-b from-[#0B0C10] via-black/45 to-[#0B0C10]"></div>
         </div>
