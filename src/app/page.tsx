@@ -790,6 +790,20 @@ export default function OptiCoreLanding() {
 
       {/* HERO & HEADER WRAPPER WITH NEURAL BACKGROUND */}
       <div className="relative w-full overflow-hidden bg-transparent z-10">
+        {/* Background Video with Dark Filter */}
+        <div className="absolute inset-0 z-0 pointer-events-none overflow-hidden">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="w-full h-full object-cover opacity-20"
+          >
+            <source src="/12680994_1920_1080_25fps.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B0C10]/80 via-transparent to-[#0B0C10]"></div>
+        </div>
+
         {/* Interactive Neural Particles background */}
         <NeuralParticles />
         
@@ -1158,7 +1172,23 @@ export default function OptiCoreLanding() {
       </section>
 
       {/* 3.5 CASOS DE USO POR SECTOR (3D Tilt Cards) */}
-      <section id="sectores" className="w-full py-16 md:py-24 max-w-[1200px] mx-auto px-6 relative z-10">
+      <section id="sectores" className="w-full py-16 md:py-24 relative overflow-hidden z-10">
+        {/* Background Video with Dark Filter */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="w-full h-full object-cover opacity-15"
+          >
+            <source src="/18743334-hd_1920_1080_60fps.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B0C10] via-black/40 to-[#0B0C10]"></div>
+        </div>
+
+        {/* Wider wrapper for card spacing */}
+        <div className="max-w-[1400px] mx-auto px-6 relative z-10">
         <div className="text-center mb-20">
           <span className="text-xs uppercase tracking-widest text-acento-primario font-bold mb-3 block">SOLUCIONES ADAPTADAS</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-text-primario tracking-tight mb-4">
@@ -1330,6 +1360,7 @@ export default function OptiCoreLanding() {
             </a>
           </TiltCard>
         </div>
+      </div>
       </section>
 
       {/* 4. IMPLEMENTACIÓN VS MENTORÍA CARDS */}
@@ -1877,7 +1908,22 @@ export default function OptiCoreLanding() {
       </section>
 
       {/* ARMA TU AGENTE A MEDIDA SECTION */}
-      <section id="agente-medida" className="w-full py-16 md:py-24 max-w-[1200px] mx-auto px-6 relative z-10">
+      <section id="agente-medida" className="w-full py-16 md:py-24 relative overflow-hidden z-10">
+        {/* Background Video with Dark Filter */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="w-full h-full object-cover opacity-15"
+          >
+            <source src="/18743334-hd_1920_1080_60fps.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-gradient-to-b from-[#0B0C10] via-black/45 to-[#0B0C10]"></div>
+        </div>
+
+        <div className="max-w-[1200px] mx-auto px-6 relative z-10">
         <div className="text-center mb-16">
           <span className="text-xs uppercase tracking-widest text-acento-primario font-bold mb-3 block">MÁXIMA PERSONALIZACIÓN</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-text-primario tracking-tight mb-4">
@@ -1941,6 +1987,7 @@ export default function OptiCoreLanding() {
             </div>
           </TiltCard>
         </div>
+      </div>
       </section>
 
       {/* 6. CASOS DE ÉXITO SECTION */}
@@ -2056,9 +2103,23 @@ export default function OptiCoreLanding() {
 
       {/* 8. CONTACT FORM CARD */}
       <section id="contacto" className="w-full bg-[#12141C]/20 border-t border-border-sutil py-16 md:py-24 relative overflow-hidden z-10">
+        {/* Background Video with Dark Filter */}
+        <div className="absolute inset-0 z-0 pointer-events-none">
+          <video 
+            autoPlay 
+            loop 
+            muted 
+            playsInline 
+            className="w-full h-full object-cover opacity-20"
+          >
+            <source src="/11206661-hd_1920_1080_25fps.mp4" type="video/mp4" />
+          </video>
+          <div className="absolute inset-0 bg-black/60"></div>
+        </div>
+
         {/* Ambient bottom glow */}
         <div className="absolute bottom-[-10%] right-[-5%] w-[600px] h-[600px] rounded-full bg-acento-secundario/8 blur-[140px] pointer-events-none animate-glow-1 z-0"></div>
-        <div className="max-w-[1200px] mx-auto px-6 text-center">
+        <div className="max-w-[1200px] mx-auto px-6 relative z-10 text-center">
           <span className="text-xs uppercase tracking-widest text-acento-primario font-bold mb-3 block">CONSULTORÍA INICIAL</span>
           <h2 className="font-display text-3xl md:text-5xl font-bold text-text-primario tracking-tight mb-4">
             Empezá a automatizar tu negocio hoy
