@@ -311,16 +311,30 @@ function BrunoLogo({ className = "w-10 h-10" }: { className?: string }) {
 
 // Custom Tech Neon Cursor Component (Cyan/Mint)
 function TechCursor() {
-  const [position, setPosition] = useState({ x: -100, y: -100 });
-  const [visible, setVisible] = useState(false);
+  const dotRef = useRef<HTMLDivElement>(null);
+  const ringRef = useRef<HTMLDivElement>(null);
   const [hovered, setHovered] = useState(false);
+  const [clicked, setClicked] = useState(false);
+  const [visible, setVisible] = useState(false);
 
   useEffect(() => {
+    let mouseX = -100;
+    let mouseY = -100;
+    let ringX = -100;
+    let ringY = -100;
+    let isMoving = false;
+
     const handleMouseMove = (e: MouseEvent) => {
-      setPosition({ x: e.clientX, y: e.clientY });
-      if (!visible) setVisible(true);
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+      if (!isMoving) {
+        setVisible(true);
+        isMoving = true;
+      }
     };
 
+    const handleMouseDown = () => setClicked(true);
+    const handleMouseUp = () => setClicked(false);
     const handleMouseLeave = () => setVisible(false);
     const handleMouseEnter = () => setVisible(true);
 
@@ -342,61 +356,74 @@ function TechCursor() {
       }
     };
 
+    let animationFrameId: number;
+    const render = () => {
+      // Lerp for the outer ring following the inner dot with smoothing
+      ringX += (mouseX - ringX) * 0.16;
+      ringY += (mouseY - ringY) * 0.16;
+
+      if (dotRef.current) {
+        dotRef.current.style.transform = `translate3d(${mouseX}px, ${mouseY}px, 0)`;
+      }
+      if (ringRef.current) {
+        ringRef.current.style.transform = `translate3d(${ringX}px, ${ringY}px, 0)`;
+      }
+
+      animationFrameId = requestAnimationFrame(render);
+    };
+
     const mediaQuery = window.matchMedia("(pointer: fine)");
     if (mediaQuery.matches) {
       document.body.classList.add("custom-cursor-none");
       window.addEventListener("mousemove", handleMouseMove);
+      window.addEventListener("mousedown", handleMouseDown);
+      window.addEventListener("mouseup", handleMouseUp);
       window.addEventListener("mouseleave", handleMouseLeave);
       window.addEventListener("mouseenter", handleMouseEnter);
       window.addEventListener("mouseover", handleMouseOver);
+      animationFrameId = requestAnimationFrame(render);
     }
 
     return () => {
       document.body.classList.remove("custom-cursor-none");
       window.removeEventListener("mousemove", handleMouseMove);
+      window.removeEventListener("mousedown", handleMouseDown);
+      window.removeEventListener("mouseup", handleMouseUp);
       window.removeEventListener("mouseleave", handleMouseLeave);
       window.removeEventListener("mouseenter", handleMouseEnter);
       window.removeEventListener("mouseover", handleMouseOver);
+      cancelAnimationFrame(animationFrameId);
     };
-  }, [visible]);
+  }, []);
 
   if (!visible) return null;
 
   return (
-    <div
-      className="fixed pointer-events-none z-[10000] select-none hidden md:block"
-      style={{
-        left: `${position.x}px`,
-        top: `${position.y}px`,
-      }}
-    >
-      <div className="relative flex items-center justify-center">
-        {/* Glow */}
-        <div
-          className={`absolute rounded-full transition-all duration-300 ${
-            hovered 
-              ? "w-12 h-12 bg-acento-secundario/20 blur-md scale-125" 
-              : "w-8 h-8 bg-acento-primario/20 blur-sm scale-100"
-          }`}
-        ></div>
-        
-        {/* Outer Ring */}
-        <div
-          className={`absolute rounded-full border transition-all duration-200 ${
-            hovered 
-              ? "w-10 h-10 border-acento-secundario scale-110 rotate-45" 
-              : "w-6 h-6 border-acento-primario scale-100 rotate-0"
-          }`}
-        ></div>
-
-        {/* Center Crosshair Dot */}
-        <div
-          className={`w-1.5 h-1.5 rounded-full transition-all duration-300 ${
-            hovered ? "bg-acento-secundario" : "bg-acento-primario"
-          }`}
-        ></div>
-      </div>
-    </div>
+    <>
+      {/* Center dot (instant position) */}
+      <div
+        ref={dotRef}
+        className="fixed top-0 left-0 w-1.5 h-1.5 rounded-full pointer-events-none z-[10000] -translate-x-1/2 -translate-y-1/2 transition-colors duration-200 hidden md:block"
+        style={{
+          backgroundColor: hovered ? "var(--color-acento-secundario)" : "var(--color-acento-primario)",
+          boxShadow: hovered 
+            ? "0 0 8px var(--color-acento-secundario), 0 0 16px var(--color-acento-secundario)" 
+            : "0 0 4px var(--color-acento-primario)",
+        }}
+      />
+      {/* Outer ring (lerp smooth lag position) */}
+      <div
+        ref={ringRef}
+        className="fixed top-0 left-0 rounded-full border pointer-events-none z-[9999] -translate-x-1/2 -translate-y-1/2 transition-all duration-300 ease-out hidden md:block"
+        style={{
+          width: hovered ? "48px" : clicked ? "18px" : "28px",
+          height: hovered ? "48px" : clicked ? "18px" : "28px",
+          borderColor: hovered ? "var(--color-acento-secundario)" : "var(--color-acento-primario)",
+          backgroundColor: hovered ? "rgba(5, 255, 195, 0.04)" : "transparent",
+          boxShadow: hovered ? "0 0 12px rgba(5, 255, 195, 0.15)" : "none",
+        }}
+      />
+    </>
   );
 }
 
@@ -872,7 +899,7 @@ export default function OptiCoreLanding() {
             </h1>
             
             <p className="text-lg md:text-xl text-text-secundario font-normal leading-relaxed mb-8 max-w-[620px]">
-              Automatizamos los procesos operativos de tu empresa. Libera 15+ hours semanales por empleado, elimina los cuellos de botella manuales y escala tu facturación sin incrementar tu plantilla.
+              ¿Cansado de perder horas en sistemas lentos y obsoletos que no se conectan entre sí? Dejá atrás las tareas manuales y los programas viejos. Creamos agentes de IA a medida que automatizan tu operación, liberan 15+ horas semanales por empleado y multiplican tu rentabilidad.
             </p>
 
             <div className="w-full sm:w-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8">
@@ -997,7 +1024,7 @@ export default function OptiCoreLanding() {
             La arquitectura que tu negocio necesita
           </h2>
           <p className="text-text-secundario text-base md:text-lg max-w-[620px] mx-auto leading-relaxed">
-            Diseñamos e integramos sistemas inteligentes que trabajan en segundo plano, ejecutando las tareas complejas de administración y ventas de tu negocio.
+            Reemplazamos sistemas antiguos e ineficientes por agentes autónomos de IA que eliminan las tareas repetitivas y hacen ganar tiempo a tu equipo.
           </p>
         </div>
 
@@ -1077,19 +1104,19 @@ export default function OptiCoreLanding() {
               <li className="flex items-start gap-3">
                 <span className="w-5 h-5 rounded-full bg-error/25 border border-error text-error flex items-center justify-center shrink-0 font-bold">✕</span>
                 <div>
-                  <strong className="text-text-primario">Pérdida de Tiempo:</strong> Empleados pasando horas al día respondiendo WhatsApp, repitiendo exactamente el mismo mensaje una y otra vez.
+                  <strong className="text-text-primario">Sistemas Obsoletos:</strong> Software lento y viejo que no se conecta entre sí, obligando a tu equipo a copiar y pegar datos manualmente entre planillas y CRM.
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <span className="w-5 h-5 rounded-full bg-error/25 border border-error text-error flex items-center justify-center shrink-0 font-bold">✕</span>
                 <div>
-                  <strong className="text-text-primario">Lentitud y Errores:</strong> Retrasos en la calificación de interesados que hacen que las consultas calientes se enfríen o elijan a competidores más ágiles.
+                  <strong className="text-text-primario">Fuga de Tiempo:</strong> Tu personal pasa horas contestando los mismos mensajes repetitivos por WhatsApp, descuidando el cierre de nuevas ventas.
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <span className="w-5 h-5 rounded-full bg-error/25 border border-error text-error flex items-center justify-center shrink-0 font-bold">✕</span>
                 <div>
-                  <strong className="text-text-primario">Límite al Crecimiento:</strong> Para duplicar tu volumen de clientes actual, te ves obligado a contratar el doble de personal operativo.
+                  <strong className="text-text-primario">Crecimiento Estancado:</strong> Si para procesar más volumen necesitas contratar el doble de empleados administrativos, tu negocio se vuelve lento e insostenible.
                 </div>
               </li>
             </ul>
@@ -1110,19 +1137,19 @@ export default function OptiCoreLanding() {
               <li className="flex items-start gap-3">
                 <span className="w-5 h-5 rounded-full bg-success/20 border border-success text-success flex items-center justify-center shrink-0 font-bold">✓</span>
                 <div>
-                  <strong className="text-text-primario">Flujos Autónomos 24/7:</strong> Los reportes, propuestas y documentos operativos se redactan, archivan y envían de manera automática en segundo plano.
+                  <strong className="text-text-primario">Adiós a la Burocracia:</strong> Los remitos, facturas y reportes se procesan, leen y archivan al instante en tu base de datos, sin errores ni demoras.
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <span className="w-5 h-5 rounded-full bg-success/20 border border-success text-success flex items-center justify-center shrink-0 font-bold">✓</span>
                 <div>
-                  <strong className="text-text-primario">Calificación Inmediata:</strong> Cada interesado pasa por filtros que recopilan datos sin intervención humana. Tu equipo solo recibe leads listos para comprar.
+                  <strong className="text-text-primario">Respuestas en Segundos:</strong> Agentes de IA atienden, filtran y califican a cada prospecto en WhatsApp las 24/7. Tu equipo solo interviene cuando el cliente está listo para comprar.
                 </div>
               </li>
               <li className="flex items-start gap-3">
                 <span className="w-5 h-5 rounded-full bg-success/20 border border-success text-success flex items-center justify-center shrink-0 font-bold">✓</span>
                 <div>
-                  <strong className="text-text-primario">Escalabilidad Infinita:</strong> Aumentas tu facturación y volumen de clientes manteniendo la misma estructura de personal.
+                  <strong className="text-text-primario">Escalabilidad Real:</strong> Multiplicas tu volumen de operaciones y clientes manteniendo tu estructura actual ágil, rápida y eficiente.
                 </div>
               </li>
             </ul>
@@ -1138,11 +1165,11 @@ export default function OptiCoreLanding() {
             Elegí el sector de tu negocio
           </h2>
           <p className="text-text-secundario text-base md:text-lg max-w-[580px] mx-auto leading-relaxed">
-            Tres rubros, agentes especializados. Cada agente queda entrenado para las tareas que de verdad mueven la aguja en tu sector.
+            Cuatro rubros, agentes especializados. Cada agente queda entrenado para las tareas que de verdad mueven la aguja en tu sector.
           </p>
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 items-stretch perspective-container">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 items-stretch perspective-container">
           {/* Inmobiliaria */}
           <TiltCard>
             <div>
@@ -1262,6 +1289,46 @@ export default function OptiCoreLanding() {
               Consultar Piloto Automotriz
             </a>
           </TiltCard>
+
+          {/* Restaurante */}
+          <TiltCard>
+            <div>
+              <div className="flex justify-between items-center mb-6">
+                <span className="px-3 py-1 bg-acento-primario/10 border border-acento-primario/30 rounded-full text-xs font-bold text-acento-primario uppercase tracking-wider">
+                  Restaurante
+                </span>
+                <span className="flex items-center gap-1.5 text-xs text-text-secundario">
+                  <span className="w-2 h-2 rounded-full bg-success animate-pulse-fast"></span>
+                  Disponible
+                </span>
+              </div>
+              <h3 className="font-display text-xl md:text-2xl font-bold text-text-primario mb-6 leading-snug">
+                Automatiza reservas, responde preguntas del menú y coordina pedidos.
+              </h3>
+              <ul className="space-y-4 text-xs text-text-secundario mb-8">
+                <li className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-acento-primario shrink-0" />
+                  <span>Toma reservas verificando disponibilidad en tiempo real e insertando los datos en tu sistema.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-acento-primario shrink-0" />
+                  <span>Muestra la carta digital, responde preguntas frecuentes e indica alérgenos al instante.</span>
+                </li>
+                <li className="flex items-start gap-2.5">
+                  <Check className="w-4 h-4 text-acento-primario shrink-0" />
+                  <span>Califica comensales y canaliza pedidos en piloto automático directo al chat de WhatsApp.</span>
+                </li>
+              </ul>
+            </div>
+            <a
+              href="https://wa.me/5493517302559?text=Hola%20OptiCore%2C%20quiero%20conocer%20el%20agente%20para%20restaurantes."
+              target="_blank"
+              rel="noopener noreferrer"
+              className="w-full py-3 border border-border-sutil hover:border-acento-primario rounded-lg text-center text-xs font-bold uppercase tracking-wider text-text-primario hover:bg-bg-hover transition-colors"
+            >
+              Consultar agente Gastronómico
+            </a>
+          </TiltCard>
         </div>
       </section>
 
@@ -1331,10 +1398,6 @@ export default function OptiCoreLanding() {
                 </div>
 
                 <div>
-                  <div className="text-[10px] text-acento-secundario font-semibold flex items-center gap-1.5 mb-4">
-                    <span className="w-2 h-2 rounded-full bg-acento-secundario animate-pulse-fast"></span>
-                    Solo quedan 4 cupos este mes
-                  </div>
                   <a
                     href="https://calendly.com/fabrizzio-joel-c/opticore-call"
                     target="_blank"
@@ -1399,10 +1462,6 @@ export default function OptiCoreLanding() {
                 </div>
 
                 <div>
-                  <div className="text-[10px] text-acento-purple font-semibold flex items-center gap-1.5 mb-4">
-                    <span className="w-2 h-2 rounded-full bg-acento-purple"></span>
-                    Solo quedan 2 de 6 plazas disponibles
-                  </div>
                   <a
                     href="https://calendly.com/fabrizzio-joel-c/opticore-call"
                     target="_blank"
