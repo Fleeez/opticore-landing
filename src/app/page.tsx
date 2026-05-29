@@ -1437,12 +1437,14 @@ export default function OptiCoreLanding() {
                 </div>
 
                 <div>
-                  <SlideButton
-                    label="Quiero la Implementación →"
-                    variant="primary"
-                    className="w-full"
-                    onComplete={() => window.open("https://calendly.com/fabrizzio-joel-c/opticore-call", "_blank", "noopener,noreferrer")}
-                  />
+                  <a
+                    href="https://calendly.com/fabrizzio-joel-c/opticore-call"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-4 bg-acento-primario text-bg-primary font-bold text-center rounded-lg shadow-lg block focus:outline-none hover:scale-[1.02] transition-transform"
+                  >
+                    Quiero la Implementación
+                  </a>
                 </div>
               </TiltCard>
             </div>
@@ -1499,12 +1501,14 @@ export default function OptiCoreLanding() {
                 </div>
 
                 <div>
-                  <SlideButton
-                    label="Quiero la Mentoría →"
-                    variant="outline"
-                    className="w-full"
-                    onComplete={() => window.open("https://calendly.com/fabrizzio-joel-c/opticore-call", "_blank", "noopener,noreferrer")}
-                  />
+                  <a
+                    href="https://calendly.com/fabrizzio-joel-c/opticore-call"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="w-full py-4 bg-transparent border border-border-sutil hover:border-acento-purple text-text-primario font-bold text-center rounded-lg block focus:outline-none hover:bg-bg-hover hover:scale-[1.02] transition-all"
+                  >
+                    Quiero la Mentoría
+                  </a>
                 </div>
               </TiltCard>
             </div>

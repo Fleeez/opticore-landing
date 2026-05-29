@@ -90,15 +90,15 @@ export function SlideButton({
       track: "bg-acento-primario/15 border border-acento-primario/40",
       fill: `rgba(0,242,254,${0.08 + progress * 0.15})`,
       fillDone: "rgba(0,242,254,0.22)",
-      handle: "bg-acento-primario shadow-[0_0_12px_rgba(0,242,254,0.4)]",
-      icon: "text-[#0B0C10]",
+      handle: "bg-transparent border-2 border-acento-primario backdrop-blur-sm",
+      icon: "text-acento-primario",
       label: "text-acento-primario",
     },
     outline: {
       track: "bg-transparent border border-border-sutil",
       fill: `rgba(0,242,254,${progress * 0.1})`,
       fillDone: "rgba(0,242,254,0.12)",
-      handle: "bg-bg-hover border border-border-sutil",
+      handle: "bg-transparent border-2 border-text-secundario backdrop-blur-sm",
       icon: "text-text-primario",
       label: "text-text-primario",
     },
@@ -106,8 +106,8 @@ export function SlideButton({
       track: "bg-[#C19A5B]/15 border border-[#C19A5B]/40",
       fill: `rgba(193,154,91,${0.08 + progress * 0.15})`,
       fillDone: "rgba(193,154,91,0.22)",
-      handle: "bg-[#C19A5B] shadow-[0_0_12px_rgba(193,154,91,0.35)]",
-      icon: "text-[#1A0F0A]",
+      handle: "bg-transparent border-2 border-[#C19A5B] backdrop-blur-sm",
+      icon: "text-[#C19A5B]",
       label: "text-[#C19A5B]",
     },
   }[variant];
@@ -119,7 +119,7 @@ export function SlideButton({
       tabIndex={0}
       aria-label={label}
       onKeyDown={onKeyDown}
-      className={`relative h-[60px] rounded-full overflow-hidden select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-acento-primario ${styles.track} ${className}`}
+      className={`relative h-[60px] rounded-full select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-acento-primario ${styles.track} ${className}`}
       style={{
         minWidth: 220,
         // touchAction en el track para bloquear scroll durante drag en iOS/Android
