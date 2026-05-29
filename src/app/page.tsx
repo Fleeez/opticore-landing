@@ -1,6 +1,7 @@
 "use client";
 
 import React, { useState, useEffect, useRef } from "react";
+import { SlideButton } from "@/components/SlideButton";
 import {
   Zap,
   Users,
@@ -926,15 +927,12 @@ export default function OptiCoreLanding() {
             </p>
 
             <div className="w-full sm:w-auto flex flex-col sm:flex-row items-stretch sm:items-center gap-4 mb-8">
-              <a
-                href="https://calendly.com/fabrizzio-joel-c/opticore-call"
-                target="_blank"
-                rel="noopener noreferrer"
-                className="px-8 py-4 bg-acento-primario text-bg-primary font-bold text-center rounded-lg shadow-[0_4px_20px_rgba(0,242,254,0.3)] transition-cta hover-cta flex items-center justify-center gap-2 focus:outline-none"
-              >
-                Agendar Sesión Estratégica
-                <ArrowRight className="w-5 h-5 stroke-[2]" />
-              </a>
+              <SlideButton
+                label="Agendar Sesión Estratégica →"
+                variant="primary"
+                className="w-full sm:w-[320px] shadow-[0_4px_20px_rgba(0,242,254,0.2)]"
+                onComplete={() => window.open("https://calendly.com/fabrizzio-joel-c/opticore-call", "_blank", "noopener,noreferrer")}
+              />
               <a
                 href="https://wa.me/5493517302559?text=Hola!%20Quiero%20saber%20más%20sobre%20los%20agentes%20de%20IA%20para%20mi%20empresa."
                 target="_blank"
@@ -1439,14 +1437,12 @@ export default function OptiCoreLanding() {
                 </div>
 
                 <div>
-                  <a
-                    href="https://calendly.com/fabrizzio-joel-c/opticore-call"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-4 bg-acento-primario text-bg-primary font-bold text-center rounded-lg shadow-lg block focus:outline-none hover:scale-[1.02] transition-transform"
-                  >
-                    Quiero la Implementación
-                  </a>
+                  <SlideButton
+                    label="Quiero la Implementación →"
+                    variant="primary"
+                    className="w-full"
+                    onComplete={() => window.open("https://calendly.com/fabrizzio-joel-c/opticore-call", "_blank", "noopener,noreferrer")}
+                  />
                 </div>
               </TiltCard>
             </div>
@@ -1503,14 +1499,12 @@ export default function OptiCoreLanding() {
                 </div>
 
                 <div>
-                  <a
-                    href="https://calendly.com/fabrizzio-joel-c/opticore-call"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="w-full py-4 bg-transparent border border-border-sutil hover:border-acento-purple text-text-primario font-bold text-center rounded-lg block focus:outline-none hover:bg-bg-hover hover:scale-[1.02] transition-all"
-                  >
-                    Quiero la Mentoría
-                  </a>
+                  <SlideButton
+                    label="Quiero la Mentoría →"
+                    variant="outline"
+                    className="w-full"
+                    onComplete={() => window.open("https://calendly.com/fabrizzio-joel-c/opticore-call", "_blank", "noopener,noreferrer")}
+                  />
                 </div>
               </TiltCard>
             </div>
@@ -1630,12 +1624,12 @@ export default function OptiCoreLanding() {
             </ul>
 
             <div className="flex flex-wrap gap-4">
-              <a
-                href="#contacto"
-                className="px-6 py-3.5 bg-acento-primario text-bg-primary font-bold rounded-lg shadow-lg hover:scale-105 transition-all duration-200 focus:outline-none"
-              >
-                Solicitar agente Inmobiliario
-              </a>
+              <SlideButton
+                label="Solicitar agente Inmobiliario →"
+                variant="primary"
+                className="w-full sm:w-[320px]"
+                onComplete={() => document.querySelector("#contacto")?.scrollIntoView({ behavior: "smooth" })}
+              />
               <a
                 href="https://sofia.somosopticore.com"
                 target="_blank"
@@ -1915,12 +1909,12 @@ export default function OptiCoreLanding() {
             </ul>
 
             <div className="flex flex-wrap gap-4">
-              <a
-                href="#contacto"
-                className="px-6 py-3.5 bg-[#C19A5B] text-[#1A0F0A] font-bold rounded-lg shadow-lg hover:scale-105 transition-all duration-200 focus:outline-none"
-              >
-                Solicitar agente Bruno
-              </a>
+              <SlideButton
+                label="Solicitar agente Bruno →"
+                variant="gold"
+                className="w-full sm:w-[300px]"
+                onComplete={() => document.querySelector("#contacto")?.scrollIntoView({ behavior: "smooth" })}
+              />
               <a
                 href="https://bruno.somosopticore.com"
                 target="_blank"
