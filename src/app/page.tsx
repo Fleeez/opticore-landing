@@ -1454,7 +1454,11 @@ export default function OptiCoreLanding() {
               <span className="absolute -top-3.5 left-1/2 -translate-x-1/2 bg-[#12141C] border border-border-sutil text-text-secundario text-[10px] font-black uppercase tracking-wider px-5 py-1 rounded-full shadow z-20">
                 DONE WITH YOU
               </span>
-              <TiltCard className="flex-1 w-full h-full">
+              {/* Banner Próximamente */}
+              <div className="absolute top-[18px] right-[-32px] z-30 w-[140px] bg-acento-purple text-white text-[10px] font-black uppercase tracking-widest text-center py-1.5 rotate-[38deg] shadow-lg pointer-events-none overflow-hidden">
+                Próximamente
+              </div>
+              <TiltCard className="flex-1 w-full h-full overflow-hidden">
                 <div>
                   <h3 className="font-display text-2xl md:text-3xl font-bold text-text-primario mb-4">
                     Mentoría e Incubadora de Agencias
