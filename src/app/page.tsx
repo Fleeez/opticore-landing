@@ -2141,15 +2141,12 @@ export default function OptiCoreLanding() {
                   </svg>
                   Seguime en Instagram
                 </a>
-                <a
-                  href="https://calendly.com/fabrizzio-joel-c/opticore-call"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="px-5 py-3 bg-acento-primario hover:bg-acento-primario/90 text-bg-primary text-xs font-bold rounded-lg shadow-md transition-all duration-200 flex items-center gap-2"
-                >
-                  Agendar llamada directa
-                  <ArrowRight className="w-4 h-4" />
-                </a>
+                <SlideButton
+                  label="Agendar llamada directa →"
+                  variant="primary"
+                  className="flex-1 min-w-[220px]"
+                  onComplete={() => window.open("https://calendly.com/fabrizzio-joel-c/opticore-call", "_blank", "noopener,noreferrer")}
+                />
               </div>
             </div>
           </div>
@@ -2363,15 +2360,12 @@ export default function OptiCoreLanding() {
                     </button>
 
                     {/* Calendly */}
-                    <a
-                      href="https://calendly.com/fabrizzio-joel-c/opticore-call"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1 py-4 bg-transparent border border-acento-primario text-acento-primario font-bold rounded-lg shadow-lg hover:bg-bg-hover hover:scale-105 transition-all duration-200 flex items-center justify-center gap-2 focus:outline-none text-sm"
-                    >
-                      Agendar videollamada
-                      <PhoneCall className="w-5 h-5 stroke-[1.5]" />
-                    </a>
+                    <SlideButton
+                      label="Agendar videollamada →"
+                      variant="outline"
+                      className="flex-1"
+                      onComplete={() => window.open("https://calendly.com/fabrizzio-joel-c/opticore-call", "_blank", "noopener,noreferrer")}
+                    />
                   </div>
 
                   <p className="text-[10px] sm:text-xs text-text-muted text-center leading-relaxed">

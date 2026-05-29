@@ -10,8 +10,8 @@ interface SlideButtonProps {
   className?: string;
 }
 
-const HANDLE_SIZE = 52;
-const THRESHOLD = 0.9;
+const HANDLE_SIZE = 56;
+const THRESHOLD = 0.88;
 const RESET_DELAY = 1800;
 
 export function SlideButton({
@@ -46,6 +46,8 @@ export function SlideButton({
   const onPointerDown = useCallback(
     (e: React.PointerEvent<HTMLDivElement>) => {
       if (completed) return;
+      // Prevents scroll on mobile during drag
+      e.preventDefault();
       e.currentTarget.setPointerCapture(e.pointerId);
       setIsDragging(true);
       startXRef.current = e.clientX - dragX;
@@ -117,8 +119,12 @@ export function SlideButton({
       tabIndex={0}
       aria-label={label}
       onKeyDown={onKeyDown}
-      className={`relative h-[56px] rounded-full overflow-hidden select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-acento-primario ${styles.track} ${className}`}
-      style={{ minWidth: 220 }}
+      className={`relative h-[60px] rounded-full overflow-hidden select-none focus:outline-none focus-visible:ring-2 focus-visible:ring-acento-primario ${styles.track} ${className}`}
+      style={{
+        minWidth: 220,
+        // touchAction en el track para bloquear scroll durante drag en iOS/Android
+        touchAction: "none",
+      }}
     >
       {/* Progress fill */}
       <div
@@ -126,11 +132,13 @@ export function SlideButton({
         style={{
           width: `${dragX + HANDLE_SIZE / 2}px`,
           background: completed ? styles.fillDone : styles.fill,
-          transition: isDragging ? "none" : "width 0.38s cubic-bezier(0.34,1.56,0.64,1), background 0.3s ease",
+          transition: isDragging
+            ? "none"
+            : "width 0.38s cubic-bezier(0.34,1.56,0.64,1), background 0.3s ease",
         }}
       />
 
-      {/* Label */}
+      {/* Label principal */}
       <span
         className={`absolute inset-0 flex items-center justify-center text-sm font-bold tracking-wide pointer-events-none z-10 ${styles.label}`}
         style={{
@@ -141,7 +149,7 @@ export function SlideButton({
         {label}
       </span>
 
-      {/* Success label */}
+      {/* Label de éxito */}
       <span
         className="absolute inset-0 flex items-center justify-center text-sm font-bold tracking-wide pointer-events-none z-10 text-acento-secundario"
         style={{ opacity: completed ? 1 : 0, transition: "opacity 0.2s ease" }}
@@ -149,7 +157,7 @@ export function SlideButton({
         ¡Listo! Abriendo...
       </span>
 
-      {/* Drag handle */}
+      {/* Handle draggable */}
       <div
         onPointerDown={onPointerDown}
         onPointerMove={onPointerMove}
@@ -160,8 +168,11 @@ export function SlideButton({
           width: HANDLE_SIZE,
           height: HANDLE_SIZE,
           transform: `translateX(${dragX}px)`,
-          transition: isDragging ? "none" : "transform 0.38s cubic-bezier(0.34,1.56,0.64,1)",
+          transition: isDragging
+            ? "none"
+            : "transform 0.38s cubic-bezier(0.34,1.56,0.64,1)",
           cursor: completed ? "default" : "grab",
+          // touchAction en el handle también para asegurar captura en todos los browsers
           touchAction: "none",
         }}
       >
@@ -171,13 +182,16 @@ export function SlideButton({
           ) : (
             <ArrowRight
               className="w-5 h-5"
-              style={{ transform: `translateX(${progress * 4}px)`, transition: isDragging ? "none" : undefined }}
+              style={{
+                transform: `translateX(${progress * 4}px)`,
+                transition: isDragging ? "none" : undefined,
+              }}
             />
           )}
         </span>
       </div>
 
-      {/* Idle shimmer */}
+      {/* Shimmer idle */}
       {!isDragging && !completed && dragX === 0 && (
         <div className="absolute inset-0 rounded-full pointer-events-none overflow-hidden">
           <div
